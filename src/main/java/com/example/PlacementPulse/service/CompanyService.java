@@ -16,7 +16,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CompanyService {
     //Object Creation
-    @Autowired
     private final CompanyRepository companyRepoObj;
 
     //CREATE
