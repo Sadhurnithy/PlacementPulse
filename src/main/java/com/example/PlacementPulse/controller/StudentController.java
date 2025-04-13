@@ -40,7 +40,7 @@ public class StudentController {
             @PathVariable("rollNo") String rollNo
     ) {
         Student student = studentServiceObj.getStudentByRollNo(rollNo);
-        return ResponseEntity.status(HttpStatus.FOUND).body(student);
+        return ResponseEntity.status(HttpStatus.OK).body(student);
     }
 
     //UPDATE

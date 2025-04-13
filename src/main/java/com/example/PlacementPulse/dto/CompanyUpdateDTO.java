@@ -1,13 +1,16 @@
 package com.example.PlacementPulse.dto;
 
+import com.example.PlacementPulse.model.Company;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.validation.constraints.*;
+import lombok.Builder;
 import lombok.Data;
 
 import java.util.List;
 import java.util.Map;
 
 @Data
+@Builder
 @JsonInclude(JsonInclude.Include.NON_NULL)
 public class CompanyUpdateDTO {
 
@@ -28,10 +31,10 @@ public class CompanyUpdateDTO {
     private Map<@NotBlank String, @Positive Integer> rolesWithVacancy;
 
     @NotNull(message = "Work location must be provided")
-    private String workLocation;
+    private Company.WorkLocation workLocation;
 
     @NotNull(message = "Company type must be provided")
-    private String type;
+    private Company.CompanyType type;
 
-    private Boolean isHiringNow;
+    private Boolean hiringNow;
 }

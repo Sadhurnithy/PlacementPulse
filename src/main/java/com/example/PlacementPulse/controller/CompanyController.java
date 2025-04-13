@@ -17,7 +17,6 @@ import java.util.List;
 @RequiredArgsConstructor
 public class CompanyController {
     //Object Creation
-    @Autowired
     private final CompanyService companyServiceObj;
 
 
@@ -43,7 +42,7 @@ public class CompanyController {
             @PathVariable("companyId") Long companyId
     ) {
         Company companies = companyServiceObj.getCompanyById(companyId);
-        return ResponseEntity.status(HttpStatus.FOUND).body(companies);
+        return ResponseEntity.status(HttpStatus.OK).body(companies);
     }
 
     //UPDATE

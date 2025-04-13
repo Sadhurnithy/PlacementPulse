@@ -52,11 +52,11 @@ public class CompanyService {
         if (dto.getRolesWithVacancy() != null)
             company.setRolesWithVacancy(dto.getRolesWithVacancy());
         if (dto.getWorkLocation() != null)
-            company.setWorkLocation(Company.WorkLocation.valueOf(dto.getWorkLocation()));
+            company.setWorkLocation(dto.getWorkLocation());
         if (dto.getType() != null)
-            company.setType(Company.CompanyType.valueOf(dto.getType()));
-        if (dto.getIsHiringNow() != null)
-            company.setHiringNow(dto.getIsHiringNow());
+            company.setType(dto.getType());
+        if (dto.getHiringNow() != null)
+            company.setHiringNow(dto.getHiringNow());
 
         return companyRepoObj.save(company);
     }
